@@ -1,0 +1,36 @@
+FUNCTION palindrom(str: ARRAY_OF STRING[n];) : BOOLEAN
+VAR
+    i:INTEGER:0;
+    e:BOOLEAN;
+    k:= n/2:INTEGER;
+BEGIN
+    IF (n<=1) THEN
+        e:=TRUE;// the string is a palindrom
+        ELSE 
+        e:=FALSE;// the string is not a palindrom
+    END_IF
+    FOR i FROM 0 TO k STEP 1  DO
+        IF (str[i] = str[n-1-i]) THEN
+            e: TRUE;//the first and last letters of the string are the same(it's a palindrom)
+        ELSE
+            e:=FALSE;//the first and last letters of the string are different
+        END_IF
+    END_FOR
+    RETURN e ;
+END
+
+
+ // base case 1
+    IF (n<= 1) THEN 
+        RETURN TRUE; // the string is a palindrom by default
+    
+    // base case 2
+    IF (str[0] <> str[n-1]) THEN
+        RETURN FALSE; // its first and last letters are different
+
+    ELSE
+    // recursive case
+        RETURN TRUE;//  we test the rest of the string
+
+
+
