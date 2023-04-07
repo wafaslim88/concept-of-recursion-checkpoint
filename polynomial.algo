@@ -1,0 +1,11 @@
+FUNCTION polynomial(pol : ARRAY_OF INTEGER[n+1]; x:INTEGER) : INTEGER
+VAR
+    i:integer;
+BEGIN
+    IF (i:=0) THEN
+        RETURN pol[0]// case in which we have one elemenet in the array
+    ELSE
+        RETURN x * polynomial(pol(n,x)) + pol[i]// recursive case using the method of Horner's scheme
+    END_IF
+    
+END
